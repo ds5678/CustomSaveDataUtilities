@@ -6,6 +6,7 @@ namespace CustomSaveDataUtilities
 {
 	internal class SaveData
 	{
+		[Include]
 		private Dictionary<string, string> itemSaveData = new Dictionary<string, string>();
 
 		public void Clear()

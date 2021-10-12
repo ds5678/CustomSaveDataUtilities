@@ -24,12 +24,14 @@ namespace CustomSaveDataUtilities
 			{
 				try
 				{
+					//MelonLogger.Msg(data);
 					SaveProxy saveProxy = SaveProxy.ParseJson(data);
+					//MelonLogger.Msg(saveProxy.data);
 					saveData = SaveData.ParseJson(saveProxy.data);
 				}
-				catch
+				catch(Exception ex)
 				{
-					MelonLogger.Warning("Save Data was in an invalid format");
+					MelonLogger.Error($"Save Data was in an invalid format: {ex}");
 					saveData = new SaveData();
 				}
 			}
